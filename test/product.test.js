@@ -1,6 +1,5 @@
 process.env.NODE_ENV = 'test';
 
-const Product = require('../models/product');
 const chai = require('chai');
 const expect = chai.expect;
 const should = chai.should();
@@ -9,15 +8,6 @@ const server = require('../server');
 
 chai.use(chaiHttp);
 
-before((done) => {
-    Product.deleteMany({}, (err) => {});
-    done();
-})
-
-after((done) => {
-    Product.deleteMany({}, (err) => {});
-    done();
-})
 
 describe('/First Test Collection', () => {
 
